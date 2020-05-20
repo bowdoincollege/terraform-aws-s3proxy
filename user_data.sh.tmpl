@@ -10,6 +10,11 @@ acl all src all
 acl localnet src ${proxy_allowed_cidr}
 
 acl SSL_ports port 443
+acl SSL_ports port 1026
+acl SSL_ports port 1027
+acl SSL_ports port 1028
+acl SSL_ports port 1031
+acl SSL_ports port 2222
 acl Safe_ports port 80          # http
 acl Safe_ports port 443         # https
 acl Safe_ports port 1025-65535  # unregistered ports
