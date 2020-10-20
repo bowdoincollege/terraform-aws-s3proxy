@@ -7,14 +7,18 @@ outside the VPC.
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| terraform | >= 0.13 |
+| aws | ~> 3.11.0 |
+| tls | ~> 3.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
-| tls | n/a |
+| aws | ~> 3.11.0 |
+| tls | ~> 3.0.0 |
 
 ## Inputs
 

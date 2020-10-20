@@ -12,7 +12,7 @@ locals {
     Description = "S3 Proxy"
     CreatedBy   = "Terraform"
     Role        = "networkcore"
-    Environment = "${var.environment}"
+    Environment = var.environment
     Name        = "s3proxy"
   }, var.tags)
 }
