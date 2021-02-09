@@ -74,6 +74,11 @@ resource "aws_launch_configuration" "s3proxy" {
   key_name                    = aws_key_pair.this.key_name
   security_groups             = [aws_security_group.instance.id]
 
+  root_block_device {
+    encrypted             = true
+    delete_on_termination = true
+  }
+
   user_data = templatefile("${path.module}/user_data.sh.tmpl", {
     proxy_port         = var.proxy_port
     proxy_allowed_cidr = var.proxy_allowed_cidr
