@@ -1,12 +1,8 @@
 
 plugin "aws" {
-  enabled    = true
-  deep_check = true
-  force      = false
-
-  aws_credentials = {
-    region = "us-east-1" # provide default until tflint parses provider block
-  }
+  enabled = true
+  version = "0.15.0"
+  source  = "github.com/terraform-linters/tflint-ruleset-aws"
 }
 
 rule "terraform_naming_convention" { enabled = true }
