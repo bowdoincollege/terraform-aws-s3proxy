@@ -109,11 +109,14 @@ resource "aws_autoscaling_group" "s3proxy" {
 
   enabled_metrics = ["GroupMinSize", "GroupMaxSize", "GroupDesiredCapacity", "GroupInServiceInstances", "GroupPendingInstances", "GroupStandbyInstances", "GroupTerminatingInstances", "GroupTotalInstances"]
 
-  tags = [for k, v in merge(local.tags, {}) : {
-    key                 = k
-    value               = v
-    propagate_at_launch = true
-  }]
+  dynamic "tag" {
+    for_each = local.tags
+    content {
+      key                 = tag.key
+      value               = tag.value
+      propagate_at_launch = true
+    }
+  }
 }
 
 # auto scale up policy
