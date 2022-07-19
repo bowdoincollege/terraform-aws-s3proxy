@@ -3,10 +3,6 @@
 # - string/number cleanup
 # - delete ebs volume on termination
 
-provider "aws" {
-  region = var.region
-}
-
 locals {
   tags = merge({
     Description = "S3 Proxy"
